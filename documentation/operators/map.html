@@ -240,6 +240,37 @@ Completed</pre></div></figcaption>
      </p>
   {% endlang_operator %}
 
+  {% lang_operator RxPHP map %}
+<figure class="variant">
+    <figcaption>
+    <p>
+    RxPHP implements this operator as <code>map</code>. It takes a transforming function that operates on each element.
+    </p>
+<h4>Sample Code</h4>
+<div class="code php">
+    <pre>
+// from https://github.com/ReactiveX/RxPHP/blob/master/demo/map/map.php
+
+$observable = \Rx\Observable::fromArray([21, 42]);
+$observable
+    ->map(function ($elem) {
+        return $elem * 2;
+    })
+    ->subscribe($stdoutObserver);
+
+   </pre>
+</div>
+<div class="output">
+    <pre>
+Next value: 42
+Next value: 84
+Complete!
+    </pre>
+</div>
+    </figcaption>
+</figure>
+  {% endlang_operator %}
+
   {% lang_operator RxPY map pluck select %}
      <p>
       <span style="color:#ff0000">TBD</span>
